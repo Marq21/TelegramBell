@@ -40,6 +40,6 @@ abstract class AbstractCommandTest {
 
         getCommand().execute(update);
 
-        Mockito.verify(chanelTelegramBot.execute(sendMessage));
+        Mockito.verify(chanelTelegramBot).execute(sendMessage);
     }
 }
