@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.github.marq21project</groupId>
 	<artifactId>telegram-bot</artifactId>
-	<version>0.2.0-SNAPSHOT</version>
+	<version>0.3.0-SNAPSHOT</version>
 	<name>TelegramBot</name>
 	<description>Telegram bot for chanells from community to community</description>
 	<properties>
