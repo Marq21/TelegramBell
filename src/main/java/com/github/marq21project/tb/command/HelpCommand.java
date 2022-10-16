@@ -14,7 +14,6 @@ public class HelpCommand implements Command {
 
     public static final String HELP_MESSAGE = String.format("""
                     ✨<b>Доcтупные команды</b>✨
-
                     <b>Начать\\закончить работу с ботом</b>
                     %s - начать работу со мной
                     %s - приостановить работу со мной
