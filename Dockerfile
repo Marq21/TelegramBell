@@ -1,4 +1,4 @@
-FROM unitfinance/jdk17-sbt-scala
+FROM adoptopenjdk/openjdk11
 ARG JAR_FILE=target/*.jar
 ENV BOT_NAME=test_marq21_bot
 ENV BOT_TOKEN=5646202744:AAHa1QF1esFgBxE6BMP7neRBziIrUdM4o_A
