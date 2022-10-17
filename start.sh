@@ -8,7 +8,7 @@ mvn clean
 mvn package
 
 # Ensure, that docker-compose stopped
-docker compose stopped
+docker-compose stop
 
 # Add environment variables
 export BOT_NAME=$1

@@ -12,7 +12,12 @@ public class HelpCommand implements Command {
 
     private final SendBotMessageService sendBotMessageService;
 
-    public static final String HELP_MESSAGE = "✨<b>Доcтупные команды</b>✨\n<b>Начать\\закончить работу с ботом</b>\n" + START.getCommandName() + " - начать работу со мной\n" + STOP.getCommandName() + " - приостановить работу со мной\n\n" + HELP.getCommandName() + " - получить помощь в работe со мной\n";
+    public static final String HELP_MESSAGE =
+            "✨<b>Доcтупные команды</b>✨\n"
+            + "<b>Начать\\закончить работу с ботом</b>\n"
+            + START.getCommandName() + " - начать работу со мной\n"
+            + STOP.getCommandName() + " - приостановить работу со мной\n\n"
+            + HELP.getCommandName() + " - получить помощь в работe со мной\n";
 
     public HelpCommand ( SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;
