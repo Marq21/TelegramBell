@@ -4,6 +4,7 @@ import com.github.marq21project.tb.bot.ChanelTelegramBot;
 import com.github.marq21project.tb.command.Command;
 import com.github.marq21project.tb.service.SendBotMessageService;
 import com.github.marq21project.tb.service.SendBotMessageServiceImpl;
+import com.github.marq21project.tb.service.TelegramUserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -15,6 +16,7 @@ abstract class AbstractCommandTest {
 
     protected ChanelTelegramBot chanelTelegramBot = Mockito.mock(ChanelTelegramBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(chanelTelegramBot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
 

@@ -2,9 +2,25 @@ version: '3.1'
 
 services:
   tb:
+    depends_on:
+      - tb-db
     build:
       context: .
     environment:
       - BOT_NAME
       - BOT_TOKEN
+      - BOT_DB_USERNAME
+      - BOT_DB_PASSWORD
     restart: always
+  tb-db:
+    image: mysql:8.0.31
+    restart: always
+    environment:
+      MYSQL_USER: ${BOT_DB_USERNAME}
+      MYSQL_PASSWORD: ${BOT_DB_PASSWORD}
+      MYSQL_DATABASE: 'dev_tb_db'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3307:3306'
+    expose:
+      - '3306'
