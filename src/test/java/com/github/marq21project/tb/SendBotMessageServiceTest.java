@@ -3,6 +3,7 @@ package com.github.marq21project.tb;
 import com.github.marq21project.tb.bot.ChanelTelegramBot;
 import com.github.marq21project.tb.service.SendBotMessageService;
 import com.github.marq21project.tb.service.SendBotMessageServiceImpl;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,16 +25,19 @@ public class SendBotMessageServiceTest {
 
     @Test
     public void shouldProperlySendMessage() throws TelegramApiException {
-        String chatId = "test_chat_id";
+        //given
+        Long chatId = 123L;
         String message = "test_message";
 
         SendMessage sendMessage = new SendMessage();
         sendMessage.setText(message);
-        sendMessage.setChatId(chatId);
+        sendMessage.setChatId(chatId.toString());
         sendMessage.enableHtml(true);
 
+        //when
         sendBotMessageService.sendMessage(chatId, message);
 
+        //then
         Mockito.verify(chanelTelegramBot).execute(sendMessage);
     }
 }

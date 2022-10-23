@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.github.marq21project</groupId>
 	<artifactId>telegram-bot</artifactId>
-	<version>0.4.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>TelegramBot</name>
 	<description>Telegram bot for chanells from community to community</description>
 	<properties>
@@ -62,7 +62,16 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>com.konghq</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>3.13.11</version>
+		</dependency>
 
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -70,13 +79,8 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>11</source>
-					<target>11</target>
+					<classifier>boot</classifier>
 				</configuration>
 			</plugin>
 		</plugins>

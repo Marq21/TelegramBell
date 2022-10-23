@@ -7,10 +7,10 @@ services:
     build:
       context: .
     environment:
-      - BOT_NAME
-      - BOT_TOKEN
-      - BOT_DB_USERNAME
-      - BOT_DB_PASSWORD
+      BOT_NAME: ${BOT_NAME}
+      BOT_TOKEN: ${BOT_TOKEN}
+      BOT_DB_USERNAME: ${BOT_DB_USERNAME}
+      BOT_DB_PASSWORD: ${BOT_DB_PASSWORD}
     restart: always
   tb-db:
     image: mysql:8.0.31
@@ -23,4 +23,6 @@ services:
     ports:
       - '3307:3306'
     expose:
-      - '3306'
+      - '3307'
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci
+

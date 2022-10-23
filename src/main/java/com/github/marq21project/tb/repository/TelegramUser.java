@@ -3,37 +3,27 @@ package com.github.marq21project.tb.repository;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
 @Entity
 @Table(name = "tg_user")
+@EqualsAndHashCode(exclude = "groupSubs")
+
 public class TelegramUser {
 
     @Id
     @Column(name = "chat_id")
-    private String chatId;
 
-    @Column
+    private Long chatId;
+
+    @Column(name = "active")
     private boolean active;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        TelegramUser that = (TelegramUser) o;
-        return chatId != null && Objects.equals(chatId, that.chatId);
-    }
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
+    private List<GroupSub> groupSubs;
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }
