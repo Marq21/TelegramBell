@@ -26,22 +26,29 @@ abstract class AbstractCommandTest {
 
     @Test
     public void shouldProperlyExecuteCommand() throws TelegramApiException {
-
+        //given
         Long chatId = 1234567824356L;
 
-        Update update = new Update();
-        Message message = Mockito.mock(Message.class);
-        Mockito.when(message.getChatId()).thenReturn(chatId);
-        Mockito.when(message.getText()).thenReturn(getCommandName());
-        update.setMessage(message);
+        Update update = prepareUpdate(chatId, getCommandName());
 
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId.toString());
         sendMessage.setText(getCommandMessage());
         sendMessage.enableHtml(true);
 
+        //when
         getCommand().execute(update);
 
+        //then
         Mockito.verify(chanelTelegramBot).execute(sendMessage);
+    }
+
+    public static Update prepareUpdate(Long chatId, String commandName) {
+        Update update = new Update();
+        Message message = Mockito.mock(Message.class);
+        Mockito.when(message.getChatId()).thenReturn(chatId);
+        Mockito.when(message.getText()).thenReturn(commandName);
+        update.setMessage(message);
+        return update;
     }
 }

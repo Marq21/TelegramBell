@@ -8,8 +8,12 @@ public enum CommandName {
     START("/start"),
     STOP("/stop"),
     HELP("/help"),
-    NO("not a command"),
-    STAT("/stat");
+    ADMIN_HELP("/ahelp"),
+    STAT("/stat"),
+    NO("nocommand"),
+    ADD_GROUP_SUB("/addgroupsub"),
+    DELETE_GROUP_SUB("/deletegroupsub"),
+    LIST_GROUP_SUB("/listgroupsub");
 
     private final String commandName;
 
