@@ -10,3 +10,4 @@ public interface TelegramUserRepository extends JpaRepository<TelegramUser, Long
     List<TelegramUser> findAllByActiveTrue();
     List<TelegramUser> findAllByActiveFalse();
 }
+

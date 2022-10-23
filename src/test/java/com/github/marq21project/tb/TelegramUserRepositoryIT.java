@@ -1,6 +1,5 @@
 package com.github.marq21project.tb;
 
-import com.github.marq21project.tb.repository.GroupSub;
 import com.github.marq21project.tb.repository.TelegramUser;
 import com.github.marq21project.tb.repository.TelegramUserRepository;
 import org.junit.jupiter.api.Assertions;
@@ -27,16 +26,19 @@ public class TelegramUserRepositoryIT {
     @Sql(scripts = {"/sql/clearDbs.sql", "/sql/telegram_users.sql"})
     @Test
     public void shouldProperlyFindAllActiveUsers() {
+
         //when
         List<TelegramUser> users = telegramUserRepository.findAllByActiveTrue();
 
         //then
         Assertions.assertEquals(5, users.size());
+
     }
 
     @Sql(scripts = {"/sql/clearDbs.sql"})
     @Test
     public void shouldProperlySaveTelegramUser() {
+
         //given
         TelegramUser telegramUser = new TelegramUser();
         telegramUser.setChatId(1234567890L);
@@ -66,4 +68,5 @@ public class TelegramUserRepositoryIT {
             Assertions.assertEquals(i + 1, groupSubs.get(i).getLastPostId());
         }
     }
+
 }

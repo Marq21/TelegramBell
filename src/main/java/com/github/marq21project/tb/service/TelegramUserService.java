@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface TelegramUserService {
 
+
     /**
      * Save provided {@link TelegramUser} entity.
      *
@@ -35,4 +36,5 @@ public interface TelegramUserService {
      * @return {@link TelegramUser} with provided chat ID or null otherwise.
      */
     Optional<TelegramUser> findByChatId(Long chatId);
+
 }

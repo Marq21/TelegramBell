@@ -7,7 +7,7 @@ import com.github.marq21project.tb.command.CommandName;
 import com.github.marq21project.tb.command.UnknownCommand;
 import com.github.marq21project.tb.service.GroupSubService;
 import com.github.marq21project.tb.service.SendBotMessageService;
-import com.github.marq21project.tb.service.StatisticsService;
+
 import com.github.marq21project.tb.service.TelegramUserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,6 +28,7 @@ class CommandContainerTest {
     public void init() {
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
         TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
+
         GroupClient groupClient = Mockito.mock(GroupClient.class);
         GroupSubService groupSubService = Mockito.mock(GroupSubService.class);
         StatisticsService statisticsService = Mockito.mock(StatisticsService.class);
@@ -37,6 +38,7 @@ class CommandContainerTest {
                 groupSubService,
                 singletonList("username"),
                 statisticsService);
+
     }
 
     @Test

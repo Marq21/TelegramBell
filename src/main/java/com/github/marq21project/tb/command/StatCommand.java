@@ -1,11 +1,14 @@
 package com.github.marq21project.tb.command;
 
+
 import com.github.marq21project.tb.dto.StatisticDTO;
 import com.github.marq21project.tb.service.SendBotMessageService;
 import com.github.marq21project.tb.service.StatisticsService;
+
 import com.github.marq21project.tb.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.meta.api.objects.Update;
+
 
 import java.util.stream.Collectors;
 
@@ -28,10 +31,12 @@ public class StatCommand implements Command {
     public StatCommand(SendBotMessageService sendBotMessageService, StatisticsService statisticsService) {
         this.sendBotMessageService = sendBotMessageService;
         this.statisticsService = statisticsService;
+
     }
 
     @Override
     public void execute(Update update) {
+
         StatisticDTO statisticDTO = statisticsService.countBotStatistic();
 
         String collectedGroups = statisticDTO.getGroupStatDTOs().stream()
@@ -43,5 +48,6 @@ public class StatCommand implements Command {
                 statisticDTO.getInactiveUserCount(),
                 statisticDTO.getAverageGroupCountByUser(),
                 collectedGroups));
+
     }
 }

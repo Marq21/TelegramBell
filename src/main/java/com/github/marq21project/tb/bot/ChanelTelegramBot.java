@@ -7,6 +7,7 @@ import com.github.marq21project.tb.service.SendBotMessageServiceImpl;
 import com.github.marq21project.tb.service.StatisticsService;
 import com.github.marq21project.tb.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -36,6 +37,7 @@ public class ChanelTelegramBot extends TelegramLongPollingBot {
         this.commandContainer =
                 new CommandContainer(new SendBotMessageServiceImpl(this),
                         telegramUserService, groupClient, groupSubService, admins, statisticsService);
+
     }
 
     @Override

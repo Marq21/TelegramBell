@@ -1,6 +1,7 @@
 package com.github.marq21project.tb;
 
 import com.github.marq21project.tb.command.Command;
+
 import com.github.marq21project.tb.command.CommandName;
 import com.github.marq21project.tb.command.StatCommand;
 import com.github.marq21project.tb.dto.GroupStatDTO;
@@ -54,3 +55,4 @@ public class StatCommandTest {
     }
 
 }
+

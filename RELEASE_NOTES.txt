@@ -16,8 +16,6 @@
 
 ## 0.4.0-SNAPSHOT
 
-* TB-1: added repository layer.
-
 ## 1.0.0
    Implemented all the logic, planned up to MVP:
 
@@ -27,3 +25,4 @@
    User can set an inactive bot and do not receive notifications
    User can restart getting notifications
    Admin has ability to see bot statistics
+

@@ -1,3 +1,4 @@
+
 DROP TABLE IF EXISTS tg_user;
 
 -- Create tg_user table
